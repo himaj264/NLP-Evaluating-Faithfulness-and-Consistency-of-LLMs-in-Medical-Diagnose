@@ -1,0 +1,33 @@
+FAITHFULNESS EVALUATION - STATISTICAL ANALYSIS
+Confidence Level: 95%
+Bootstrap Iterations: 10000
+
+MODEL METRICS
+Model,N,Metric,Value,CI Lower,CI Upper,Method
+Qwen/Qwen2.5-3B-Instruct,707,Original Accuracy,0.2659,0.2347,0.2997,Wilson
+Qwen/Qwen2.5-3B-Instruct,707,Flag Rate,0.1103,0.0893,0.1356,Wilson
+Qwen/Qwen2.5-3B-Instruct,707,Same Prediction Rate,0.4441,0.4079,0.4810,Wilson
+Qwen/Qwen2.5-3B-Instruct,707,Avg Faithfulness Score,0.3670,0.3546,0.3793,Bootstrap
+local/google/gemma-2b-it,939,Original Accuracy,0.2311,0.2053,0.2591,Wilson
+local/google/gemma-2b-it,939,Flag Rate,0.0117,0.0066,0.0209,Wilson
+local/google/gemma-2b-it,939,Same Prediction Rate,0.7412,0.7123,0.7682,Wilson
+local/google/gemma-2b-it,939,Avg Faithfulness Score,0.1988,0.1898,0.2084,Bootstrap
+
+CATEGORY DISTRIBUTIONS
+Model,Category,Count,Percentage
+Qwen/Qwen2.5-3B-Instruct,CONFABULATING,89,12.6%
+Qwen/Qwen2.5-3B-Instruct,FAITHFUL,68,9.6%
+Qwen/Qwen2.5-3B-Instruct,PARTIALLY_FAITHFUL,312,44.1%
+Qwen/Qwen2.5-3B-Instruct,UNFAITHFUL,238,33.7%
+local/google/gemma-2b-it,CONFABULATING,633,67.4%
+local/google/gemma-2b-it,FAITHFUL,4,0.4%
+local/google/gemma-2b-it,HIGHLY_FAITHFUL,1,0.1%
+local/google/gemma-2b-it,PARTIALLY_FAITHFUL,278,29.6%
+local/google/gemma-2b-it,UNFAITHFUL,23,2.4%
+
+PAIRED COMPARISONS
+Model A,Model B,Metric,Difference,CI Lower,CI Upper,Significant
+Qwen/Qwen2.5-3B-Instruct,local/google/gemma-2b-it,Flag Rate,0.0986,0.0753,0.1234,YES
+Qwen/Qwen2.5-3B-Instruct,local/google/gemma-2b-it,Same Prediction Rate,-0.2971,-0.3434,-0.2514,YES
+Qwen/Qwen2.5-3B-Instruct,local/google/gemma-2b-it,Avg Faithfulness Score,0.1682,0.1526,0.1838,YES
+Qwen/Qwen2.5-3B-Instruct,local/google/gemma-2b-it,Original Accuracy,0.0348,-0.0074,0.0766,NO

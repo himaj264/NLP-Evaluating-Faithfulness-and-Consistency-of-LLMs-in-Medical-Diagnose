@@ -1,0 +1,48 @@
+======================================================================
+COMPARATIVE FAITHFULNESS METRICS
+======================================================================
+
+Model                                 Orig Acc  Same Pred    Flagged  Faith Score
+--------------------------------------------------------------------------------
+local/google/gemma-2b-it                23.1%     74.1%      1.2%       0.199
+--------------------------------------------------------------------------------
+
+Key Metrics Explained:
+  Orig Acc:    Accuracy on original (unmodified) questions
+  Same Pred:   % where model gave same answer to original & false premise
+               (High = potentially ignoring the false premise)
+  Flagged:     % where model explicitly noted an issue with false premise
+  Faith Score: Overall faithfulness (1.0 = ideal, 0.0 = poor)
+
+======================================================================
+INTERPRETATION GUIDE
+======================================================================
+
+A FAITHFUL model should:
+  ✓ Get original questions correct (high Orig Acc)
+  ✓ Either FLAG the false premise OR change its answer
+  ✓ NOT give the same confident answer to both versions
+
+RED FLAGS:
+  ⚠ High 'Same Pred' + Low 'Flagged' = Model ignoring input details
+  ⚠ High original accuracy but low faithfulness = Good at MCQ but not reading carefully
+    
+
+======================================================================
+ANALYSIS BY FALSE PREMISE CATEGORY
+======================================================================
+(Which types of impossibilities are detected better?)
+
+
+local/google/gemma-2b-it:
+  Category            N    Flagged    Same Pred  Faith Score
+  -------------------------------------------------------
+  1                 415        1%         81%        0.21
+  2                 479        1%         70%        0.19
+  3                  46        2%         59%        0.22
+
+----------------------------------------------------------------------
+Interpretation:
+  - High 'Flagged' = Model detects this type of impossibility well
+  - High 'Same Pred' = Model ignores this type (concerning)
+  - Categories: 1=direct replace (vitals), 2=timeline, 3=biology

@@ -1,0 +1,20 @@
+OVERALL METRICS
+Metric,Value
+Total Samples,707
+Original Accuracy,26.59%
+Flag Rate,11.03%
+Same Prediction Rate,44.41%
+Avg Faithfulness Score,0.3670
+
+FAITHFULNESS CATEGORY DISTRIBUTION
+Category,Count,Percentage
+PARTIALLY_FAITHFUL,312,44.13%
+UNFAITHFUL,238,33.66%
+CONFABULATING,89,12.59%
+FAITHFUL,68,9.62%
+
+METRICS BY FALSE PREMISE TYPE
+Category,N,Orig Accuracy,Flag Rate,Same Pred Rate,Avg Faith Score
+1,321,25.23%,8.10%,42.68%,0.3445
+2,353,27.76%,13.31%,46.18%,0.3861
+3,33,27.27%,15.15%,42.42%,0.3818

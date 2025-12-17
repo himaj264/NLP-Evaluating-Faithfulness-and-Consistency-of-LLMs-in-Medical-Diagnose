@@ -1,0 +1,2 @@
+model,n_samples,original_accuracy,same_prediction_rate,changed_prediction_rate,flag_rate,avg_faithfulness_score,ideal_rate,blind_rate
+local/google/gemma-2b-it,940,0.2309,0.7415,0.2585,0.0117,0.1987,0.0330,0.5085
